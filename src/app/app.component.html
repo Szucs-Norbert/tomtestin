@@ -1,0 +1,36 @@
+<!--
+*File:app.component.html
+*Author: Szűcs Norbert
+*Copyright: 2022, Szűcs Norbert
+*Group: Szoft II/N
+*Date:2022.01.13
+*Github:https://github.com/Szucs-Norbert
+*Feladat: 0323
+*Program feladata: Testömegindex kiszámítása
+-->
+
+
+<h1>Testtömegindex - Szűcs Norbert 2022.01.13 SZOFT II/N</h1>
+
+<div id="main">
+<form [formGroup]="indexForm">
+ 
+  <label for="weight">Testsúly (kg): </label>
+  <input id="weight"  formControlName="weight">
+  <br>
+
+  <label for="height">Magasság (cm): </label>
+  <input id="height"  formControlName="height">
+  
+  <br>
+  <div *ngIf="indexVisible">
+    <label>Testömegindex</label>
+    <input formControlName="index">
+  </div>
+
+  <p></p>
+  <button (click)="onClickSzamit()">Számít</button>
+
+
+</form>
+</div>
